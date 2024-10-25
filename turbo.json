@@ -1,0 +1,22 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"tasks": {
+		"build": {
+			"outputs": ["dist/**"],
+			"outputLogs": "errors-only",
+			"dependsOn": ["^build"]
+		},
+		"release": {
+			"dependsOn": ["build"]
+		},
+		"test": {},
+		"dev": {
+			"dependsOn": ["build"],
+			"cache": false,
+			"persistent": false
+		},
+		"clean": {
+			"cache": false
+		}
+	}
+}

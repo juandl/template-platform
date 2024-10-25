@@ -1,0 +1,33 @@
+{
+	"name": "@localpkg/pkg.ui.theme",
+	"version": "0.0.1",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"sideEffects": false,
+	"files": [
+		"dist/**"
+	],
+	"scripts": {
+		"build": "rollup -c",
+		"dev": "rollup -c -w",
+		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+	},
+	"devDependencies": {
+		"@localpkg/env.tsconfig": "workspace:*",
+		"postcss": "^8.4.47",
+		"postcss-preset-mantine": "^1.17.0",
+		"postcss-simple-vars": "^7.0.1"
+	},
+	"dependencies": {
+		"@emotion/cache": "^11.13.1",
+		"@emotion/react": "^11.13.3",
+		"@emotion/serialize": "^1.3.2",
+		"@emotion/styled": "^11.13.0",
+		"@emotion/utils": "^1.4.1",
+		"@mantine/core": "^7.13.4",
+		"@mantine/emotion": "^7.13.4",
+		"@mantine/hooks": "^7.13.4",
+		"@mantine/notifications": "^7.13.4"
+	}
+}

@@ -1,0 +1,12 @@
+services:
+  auth:
+    container_name: theevent_auth
+    image: svhd/logto:latest
+    entrypoint: [ "sh", "-c", "npm run cli db seed -- --swe && npm start" ]
+    env_file:
+      - .env
+    ports:
+      - 3001:3001
+      - 3002:3002
+    environment:
+      - TRUST_PROXY_HEADER=1

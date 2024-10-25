@@ -1,0 +1,25 @@
+services:
+  app:
+    image: nocobase/nocobase:latest
+    environment:
+      # The application's secret key, used to generate user tokens, etc.
+      # If APP_KEY is changed, old tokens will also become invalid.
+      # It can be any random string, and make sure it is not exposed.
+      - APP_KEY=your-secret-key
+      # Database type, supports postgres, mysql, mariadb
+      - DB_DIALECT=postgres
+      # Database host can be replaced with the IP of an existing database server
+      - DB_HOST=host.docker.internal
+      # Database name
+      - DB_DATABASE=theevent_admin
+      # Database user
+      - DB_USER=root
+      # Database password
+      - DB_PASSWORD=root
+      # Timezone
+      - TZ=Asia/Bahrain
+    volumes:
+      - ./storage:/app/nocobase/storage
+    ports:
+      - "13000:80"
+    # init: true
