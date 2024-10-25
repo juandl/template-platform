@@ -1,0 +1,18 @@
+networks:
+  app-network:
+    driver: bridge
+
+services:
+  engine_service:
+    container_name: engine_service
+    image: hasura/graphql-engine:v2.42.0
+    ports:
+      - "8080:8080"
+    restart: always
+    environment:
+      HASURA_GRAPHQL_ENABLE_CONSOLE: "true"
+      HASURA_GRAPHQL_ENABLED_LOG_TYPES: startup, http-log, webhook-log, websocket-log, query-log
+    networks:
+      - app-network
+    env_file:
+      - .env

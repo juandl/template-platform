@@ -1,6 +1,6 @@
 services:
-  auth:
-    container_name: theevent_auth
+  auth_service:
+    container_name: auth_service
     image: svhd/logto:latest
     entrypoint: [ "sh", "-c", "npm run cli db seed -- --swe && npm start" ]
     env_file:
