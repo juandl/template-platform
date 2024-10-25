@@ -1,5 +1,5 @@
 {
-  "name": "frodehub",
+  "name": "platform_template",
   "private": true,
   "scripts": {
     "packages:clean": "turbo run clean --no-daemon && rm -rf node_modules",
